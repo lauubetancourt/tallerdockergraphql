@@ -7,8 +7,9 @@ const typeDefs = gql`
   type Query {
     hello(message: String!): String
     helloJuan(message: String!): String
-    elloLaura(message: String!): String
+    helloLaura(message: String!): String
     helloCristianDavidPacheco(message: String!): String
+    helloSofia(message: String!): String
   }
 `;
 
@@ -20,6 +21,9 @@ const resolvers = {
     },
     helloFromLauraBetancourt: (_, { message }) => {
       return `¡Hola, ${message}! Un saludo por parte de Laura `;
+      },
+    helloSofia: (_, { message }) => {
+        return `¡Hola, ${message}! Un saludo por parte de Sofía `;
       },
     helloJuan: (_, { message }) => {
       return `¡Hola, ${message}! Un saludo por parte de Juan Narváez`;
@@ -58,3 +62,4 @@ async function startApolloServer() {
 }
 
 startApolloServer();
+
