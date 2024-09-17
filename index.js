@@ -7,6 +7,7 @@ const typeDefs = gql`
   type Query {
     hello(message: String!): String
     helloJuan(message: String!): String
+    elloLaura(message: String!): String
     helloCristianDavidPacheco(message: String!): String
   }
 `;
@@ -15,14 +16,16 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     hello: (_, { message }) => {
-        return `¡Hola, ${message}! Un saludo por parte del profe`;
+      return `¡Hola, ${message}! Un saludo por parte del profe `;
+    },
+    helloFromLauraBetancourt: (_, { message }) => {
+      return `¡Hola, ${message}! Un saludo por parte de Laura `;
       },
     helloJuan: (_, { message }) => {
       return `¡Hola, ${message}! Un saludo por parte de Juan Narváez`;
     },
     helloCristianDavidPacheco: (_, { message }) => {
       return `¡Hola, ${message}! Un saludo por parte del Master Cristian David Pacheco`;
-     return `¡Hola, ${message}! Un saludo por parte del profe `;
    },
   },
 };
