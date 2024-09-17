@@ -15,6 +15,9 @@ const resolvers = {
     hello: (_, { message }) => {
         return `¡Hola, ${message}! Un saludo por parte del profe `;
       },
+    helloFromJulianPuyo: (_, { message }) => {
+        return `¡Hola, ${message}! Un saludo por parte de Julian Puyo`;
+      }
   },
 };
 
