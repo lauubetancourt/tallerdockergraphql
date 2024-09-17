@@ -4,11 +4,17 @@ const path = require('path');
 
 // Define el esquema de GraphQL
 const typeDefs = gql`
-type Query {
-  hello(message: String!): String
-  helloJuan(message: String!): String
-  helloEsteban(message: String!): String
-}
+  type Query {
+    hello(message: String!): String
+    helloJose(message: String!): String
+    helloJuan(message: String!): String
+    helloFromJulianPuyo(message: String!): String
+    helloLaura(message: String!): String
+    helloCristianDavidPacheco(message: String!): String
+    helloSofia(message: String!): String
+    helloEsteban(message: String!): String
+
+  }
 `;
 
 // Define los resolvers de GraphQL
@@ -17,11 +23,27 @@ const resolvers = {
     hello: (_, { message }) => {
       return `¡Hola, ${message}! Un saludo por parte del profe `;
     },
+    helloLaura: (_, { message }) => {
+      return `¡Hola, ${message}! Un saludo por parte de Laura `;
+      },
+    helloJose: (_, { message }) => {
+        return `¡Hola, ${message}! Un saludo por parte de Jose Castellanos `;
+      },
+
+    helloFromJulianPuyo: (_, { message }) => {
+        return `¡Hola, ${message}! Un saludo por parte de Julian Puyo`;
+      },
+    helloSofia: (_, { message }) => {
+        return `¡Hola, ${message}! Un saludo por parte de Sofía `;
+      },
     helloJuan: (_, { message }) => {
       return `¡Hola, ${message}! Un saludo por parte de Juan Narváez`;
     },
+    helloCristianDavidPacheco: (_, { message }) => {
+      return `¡Hola, ${message}! Un saludo por parte del Master Cristian David Pacheco`;
+   },
     helloEsteban: (_, { message }) => {
-      return `¡Hola, ${message}! Un saludo por parte de Esteban Clavijo -_-`;
+    return `¡Hola, ${message}! Un saludo por parte de Esteban Clavijo -_-`;
     },
   },
 };
@@ -54,3 +76,4 @@ async function startApolloServer() {
 }
 
 startApolloServer();
+
