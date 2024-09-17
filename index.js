@@ -11,6 +11,7 @@ const typeDefs = gql`
     helloLaura(message: String!): String
     helloCristianDavidPacheco(message: String!): String
     helloSofia(message: String!): String
+
   }
 `;
 
@@ -20,7 +21,7 @@ const resolvers = {
     hello: (_, { message }) => {
       return `¡Hola, ${message}! Un saludo por parte del profe `;
     },
-    helloFromLauraBetancourt: (_, { message }) => {
+    helloLaura: (_, { message }) => {
       return `¡Hola, ${message}! Un saludo por parte de Laura `;
       },
     helloJose: (_, { message }) => {
