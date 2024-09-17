@@ -4,11 +4,12 @@ const path = require('path');
 
 // Define el esquema de GraphQL
 const typeDefs = gql`
-type Query {
-  hello(message: String!): String
-  helloLaura(message: String!): String
-  helloJuan(message: String!): String
-}
+  type Query {
+    hello(message: String!): String
+    helloJuan(message: String!): String
+    elloLaura(message: String!): String
+    helloCristianDavidPacheco(message: String!): String
+  }
 `;
 
 // Define los resolvers de GraphQL
@@ -18,11 +19,14 @@ const resolvers = {
       return `¡Hola, ${message}! Un saludo por parte del profe `;
     },
     helloFromLauraBetancourt: (_, { message }) => {
-        return `¡Hola, ${message}! Un saludo por parte de Laura `;
+      return `¡Hola, ${message}! Un saludo por parte de Laura `;
       },
     helloJuan: (_, { message }) => {
       return `¡Hola, ${message}! Un saludo por parte de Juan Narváez`;
     },
+    helloCristianDavidPacheco: (_, { message }) => {
+      return `¡Hola, ${message}! Un saludo por parte del Master Cristian David Pacheco`;
+   },
   },
 };
 
