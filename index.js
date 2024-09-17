@@ -6,6 +6,7 @@ const path = require('path');
 const typeDefs = gql`
   type Query {
     hello(message: String!): String
+    helloFromJulianPuyo(message: String!): String
   }
 `;
 
