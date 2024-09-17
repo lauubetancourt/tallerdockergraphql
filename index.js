@@ -4,21 +4,25 @@ const path = require('path');
 
 // Define el esquema de GraphQL
 const typeDefs = gql`
-  type Query {
-    hello(message: String!): String
-    helloLaura(message: String!): String
-  }
+type Query {
+  hello(message: String!): String
+  helloLaura(message: String!): String
+  helloJuan(message: String!): String
+}
 `;
 
 // Define los resolvers de GraphQL
 const resolvers = {
   Query: {
     hello: (_, { message }) => {
-        return `¡Hola, ${message}! Un saludo por parte del profe `;
-      },
+      return `¡Hola, ${message}! Un saludo por parte del profe `;
+    },
     helloFromLauraBetancourt: (_, { message }) => {
         return `¡Hola, ${message}! Un saludo por parte de Laura `;
       },
+    helloJuan: (_, { message }) => {
+      return `¡Hola, ${message}! Un saludo por parte de Juan Narváez`;
+    },
   },
 };
 
@@ -32,15 +36,15 @@ async function startApolloServer() {
   // Crea la aplicación Express
   const app = express();
 
-  // Aplica el middleware de Apollo Server a la aplicación Express
+  // Aplica el middleware de Apollo Server a la aplicación 
   server.applyMiddleware({ app, path: '/graphql' });
 
   // Sirve la aplicación de React desde la carpeta "saludofront-app"
-   const reactAppPath = path.join(__dirname, 'saludofront-app', 'dist');
-    app.use(express.static(reactAppPath));
-    app.get('*', (req, res) => {
+  const reactAppPath = path.join(__dirname, 'saludofront-app', 'dist');
+  app.use(express.static(reactAppPath));
+  app.get('*', (req, res) => {
     res.sendFile(path.join(reactAppPath, 'index.html'));
-    });
+  });
 
   // Inicia el servidor
   const PORT = 4000;
@@ -50,4 +54,3 @@ async function startApolloServer() {
 }
 
 startApolloServer();
-
